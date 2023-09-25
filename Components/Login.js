@@ -1,14 +1,13 @@
-import { View, Text, StyleSheet, TextInput } from 'react-native'
+import { View, Text, StyleSheet, TextInput,TouchableOpacity } from 'react-native'
 import React from 'react'
-import Buttons from './Buttons'
 
-const Login = () => {
+const Login = ({navigation}) => {
   return (
    
       <View style={styles.LogForm}>
         <TextInput placeholder='User name or email' style={styles.UserInput} />
         <TextInput placeholder='Password ' style={styles.UserInput} />
-        <Buttons name="Login" style={{ backgroundColor: "blue", color: "white", textAlign: "center", justifyContent: "center", alignItems: "center", fontSize: 18, padding: 7, width: 170, }} />
+        <TouchableOpacity  onPress={() => { navigation.navigate('Home') }} style={{backgroundColor:"green", textAlign: "center", justifyContent: "center", alignItems: "center",padding:7,width:170,}}><Text style={{color:"white",fontSize: 18}}>Login</Text></TouchableOpacity>
 
       </View>
    
@@ -28,7 +27,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     rowGap: 20,
-    marginTop:80
+    padding:20,
+    marginTop:180
   },
 
 })

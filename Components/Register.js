@@ -1,6 +1,5 @@
 import { View, Text, TextInput, StyleSheet, Button, TouchableOpacity } from 'react-native'
 import React from 'react'
-import Buttons from './Buttons'
 
 const Register = ({navigation}) => {
   return (
@@ -9,8 +8,9 @@ const Register = ({navigation}) => {
       <TextInput placeholder='Email' style={styles.UserInput} />
       <TextInput placeholder='Password ' style={styles.UserInput} />
       <TextInput placeholder='Confirm password' style={styles.UserInput} />
-      <Buttons onPress={() => { navigation.navigate('Login') }}  name="Register" style={{backgroundColor:"green",color: "white", textAlign: "center", justifyContent: "center", alignItems: "center", fontSize: 18,padding:7,width:170,}}/>
-<Button title='login' onPress={() => { navigation.navigate('Login') }}></Button>
+    
+<TouchableOpacity  onPress={() => { navigation.navigate('Login') }} style={{backgroundColor:"green",color: "white", textAlign: "center", justifyContent: "center", alignItems: "center", fontSize: 18,padding:7,width:170,}}><Text style={{color:"white",fontSize: 18}}>Register</Text></TouchableOpacity>
+
     </View>
   )
 }
@@ -27,6 +27,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     rowGap: 20,
+    padding:20,
+    marginTop:112
   }
 
 })
